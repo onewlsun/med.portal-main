@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f9fc">
+  <meta name="description" content="Medora — запись к врачу и удобный медицинский портал.">
+  <title>Medora — забота о здоровье</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/docx@8.5.0/build/index.umd.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Medora — главная">
+      <span class="brand-mark" aria-hidden="true">✚</span>
+      <span>medora<span class="brand-dot">.</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Главная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#doctors">Врачи</a>
+      <a href="#how">Как это работает</a>
+    </nav>
+    <div class="header-actions">
+      <button class="login-button" id="loginButton"><span aria-hidden="true">♙</span> Войти</button>
+      <button class="button button-primary header-cta" data-open-register>Создать аккаунт <span aria-hidden="true">↗</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero page-width">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> Здоровье — ближе, чем кажется</div>
+        <h1>Забота о вас.<br><span>В удобном ритме.</span></h1>
+        <p>Выбирайте врача, записывайтесь на приём и управляйте визитами в одном месте.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#doctors">Найти своего врача <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#how">Как это работает <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="patient-proof">
+          <div class="avatar-stack" aria-hidden="true"><span>А</span><span>М</span><span>Е</span><span>+</span></div>
+          <div><strong>12 000+</strong><small>пациентов уже с нами</small></div>
+          <div class="proof-divider"></div>
+          <div class="rating"><span aria-hidden="true">★</span> 4.9 <small>рейтинг сервиса</small></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Иллюстрация медицинской заботы">
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <div class="art-sun"></div>
+        <div class="doctor-illustration">
+          <div class="doctor-hair"></div>
+          <div class="doctor-face"><span class="face-eye eye-left"></span><span class="face-eye eye-right"></span><span class="face-smile"></span></div>
+          <div class="doctor-neck"></div>
+          <div class="doctor-coat"><span class="coat-pocket">✚</span></div>
+          <div class="doctor-stethoscope"></div>
+        </div>
+        <div class="floating-note note-top"><span class="note-icon">✚</span><span><b>Ваше здоровье</b><small>в надёжных руках</small></span></div>
+        <div class="floating-note note-bottom"><span class="note-icon note-star">★</span><span><b>Проверенные врачи</b><small>от 4.8 рейтинга</small></span></div>
+        <span class="art-sparkle sparkle-one">✦</span><span class="art-sparkle sparkle-two">✧</span>
+      </div>
+    </section>
+
+    <section class="search-panel page-width" aria-label="Поиск врача">
+      <div class="search-intro"><span class="search-icon">⌕</span><div><strong>Найдём подходящего врача</strong><small>Специалисты рядом с вами</small></div></div>
+      <label class="search-field"><span>Специальность</span><select id="specialtySearch" aria-label="Выберите специальность"><option value="">Любая специальность</option><option>Терапевт</option><option>Кардиолог</option><option>Педиатр</option><option>Невролог</option><option>Дерматолог</option></select></label>
+      <label class="search-field location-field"><span>Город</span><input id="citySearch" type="text" placeholder="Например, Астана" value="Астана"></label>
+      <button class="button button-primary search-button" id="searchButton">Найти врача <span aria-hidden="true">→</span></button>
+    </section>
+
+    <section class="services-section page-width" id="services">
+      <div class="section-heading">
+        <div><div class="eyebrow">Всё для вашего здоровья</div><h2>Сервис, который <span>заботится</span></h2></div>
+        <a class="text-link" href="#how">Подробнее <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="service-grid">
+        <article class="service-card service-green"><span class="service-icon">▣</span><span class="card-arrow">↗</span><h3>Запись к врачу</h3><p>Выберите удобное время без звонков и ожидания.</p><span class="service-decoration">01</span></article>
+        <article class="service-card service-lilac"><span class="service-icon">♡</span><span class="card-arrow">↗</span><h3>Личный кабинет</h3><p>Визиты, профиль и напоминания — всегда под рукой.</p><span class="service-decoration">02</span></article>
+        <article class="service-card service-yellow"><span class="service-icon">✳</span><span class="card-arrow">↗</span><h3>Проверенные врачи</h3><p>Знакомьтесь со специалистами и отзывами пациентов.</p><span class="service-decoration">03</span></article>
+      </div>
+    </section>
+
+    <section class="doctors-section page-width" id="doctors">
+      <div class="section-heading doctors-heading">
+        <div><div class="eyebrow">Команда Medora</div><h2>Врачи, которым <span>доверяют</span></h2><p>Опытные специалисты, готовые помочь именно вам.</p></div>
+        <div class="doctor-controls"><button class="filter-chip active" data-filter="Все">Все врачи</button><button class="filter-chip" data-filter="Терапевт">Терапевты</button><button class="filter-chip" data-filter="Кардиолог">Кардиологи</button></div>
+      </div>
+      <div class="doctor-grid" id="doctorGrid" aria-live="polite"></div>
+      <div class="doctor-foot"><span id="doctorCount"></span><a class="text-link" href="#doctors" id="showAllDoctors">Показать всех <span aria-hidden="true">→</span></a></div>
+    </section>
+
+    <section class="how-section page-width" id="how">
+      <div class="how-copy"><div class="eyebrow">Просто и удобно</div><h2>Запись к врачу<br>всего за <span>3 шага</span></h2><p>Больше времени на себя — меньше на организацию визита.</p><a class="button button-primary" href="#doctors">Выбрать специалиста <span aria-hidden="true">→</span></a></div>
+      <div class="steps">
+        <article class="step"><span class="step-number">01</span><div><h3>Найдите специалиста</h3><p>Выберите направление или воспользуйтесь поиском.</p></div><span class="step-symbol">⌕</span></article>
+        <article class="step"><span class="step-number">02</span><div><h3>Подберите время</h3><p>Посмотрите расписание и выберите удобный слот.</p></div><span class="step-symbol">◷</span></article>
+        <article class="step"><span class="step-number">03</span><div><h3>Приходите на приём</h3><p>Подтверждение записи останется в вашем кабинете.</p></div><span class="step-symbol">♡</span></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true">✚</span><span>medora<span class="brand-dot">.</span></span></a><span>Демо-проект медицинского портала</span><a href="#services">Услуги</a><a href="#doctors">Специалисты</a><span>© 2026 Medora</span></footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
+      <div class="modal-mark">✚</div>
+      <h2 id="modalTitle">Добро пожаловать</h2>
+      <p class="modal-subtitle" id="modalSubtitle">Войдите или создайте аккаунт Medora.</p>
+      <div id="modalContent"></div>
+      <p class="demo-note">Демо-версия: данные профиля сохраняются только в этом браузере. Не используйте реальные медицинские или платёжные данные.</p>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
